@@ -37,7 +37,7 @@ export const DEFAULT_KEEP_DURATION: Duration = { months: 3 };
 
 export interface KeepInput {
   senderId: string;
-  duration?: Duration;
+  duration?: Duration | undefined;
   note?: string | undefined;
 }
 

@@ -1,6 +1,6 @@
 # ADR-003: Interface layer — CLI + TUI vs. local web app
 
-- **Status:** **Open.** Must be confirmed before the interface layer is built.
+- **Status:** **Accepted** (Option A). Confirmed 2026-08-17; open until then.
 - **Date:** 2026-08-17
 
 ## Context
@@ -41,12 +41,18 @@ Fastify serving a static SPA, bound to `127.0.0.1` only.
 
 ## Decision
 
-Deferred. Default recommendation is **Option A**, on the abandonment argument in
-`docs/adr/README.md`: a triage list of a few hundred rows is well within what a
-paged terminal list handles, and the legibility requirements are all text.
+**Option A — a CLI with an interactive TUI review flow.**
 
-The interface layer is not started until this ADR is confirmed and its status
-changed to Accepted.
+The deciding argument is the one in `docs/adr/README.md`: a triage list of a few
+hundred rows is well within what a paged terminal list handles, the legibility
+requirements are all text, and a CLI that ran in 2026 still runs in 2027. Option
+B's advantages are real but they are advantages at _scale of attention_, and
+this tool is used six times a year by one person.
+
+Option B is not foreclosed. All interface code depends on the domain layer
+through plain function calls — no SQL, no `imapflow`, no date arithmetic above
+the domain — so a web front end can be added later against the same functions
+without touching anything below it.
 
 ## Consequences (either way)
 

@@ -8,7 +8,7 @@ first (in its own commit, with a `Superseded by` link), then change the code.
 | ------------------------------------------- | ------------------------------------------------------ | -------- |
 | [001](001-mail-access-imap-app-password.md) | Mail access via IMAP with an app password              | Accepted |
 | [002](002-on-demand-sync-no-daemon.md)      | On-demand sync, no daemon, no scheduler                | Accepted |
-| [003](003-interface-layer.md)               | Interface layer: CLI + TUI vs. local web app           | **Open** |
+| [003](003-interface-layer.md)               | Interface layer: CLI + TUI vs. local web app           | Accepted |
 | [004](004-storage-sqlite.md)                | Storage: SQLite via `better-sqlite3`                   | Accepted |
 | [005](005-sender-identity.md)               | Sender identity: surrogate key + identity observations | Accepted |
 | [006](006-suppression-semantics.md)         | Suppression as an append-only decision log             | Accepted |
