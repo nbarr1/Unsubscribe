@@ -25,8 +25,15 @@ export function truncate(text: string, width: number): string {
   return width <= 1 ? text.slice(0, width) : text.slice(0, width - 1) + '…';
 }
 
+/**
+ * A fixed-width cell that always ends in at least one space.
+ *
+ * Truncating to the full width lets a long address butt straight up against
+ * the next column, and `…9` reads as part of the address rather than as the
+ * message count.
+ */
 function column(text: string, width: number): string {
-  return padEnd(truncate(text, width), width);
+  return padEnd(truncate(text, width - 1), width);
 }
 
 /** The review table: volume first, because that is what makes triage worth it. */
