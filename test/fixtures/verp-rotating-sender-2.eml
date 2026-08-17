@@ -1,0 +1,12 @@
+Return-Path: <bounce-90551-3a7e2f18@bounce.mailer.test>
+From: "Weekly Roundup" <bounce-90551-3a7e2f18@bounce.mailer.test>
+To: you@example.com
+Subject: Issue #215
+Date: Fri, 21 Aug 2026 07:00:00 +0000
+Message-ID: <issue-215-90551@bounce.mailer.test>
+DKIM-Signature: v=1; a=rsa-sha256; d=mailer.test; s=s1; h=From; b=aGVsbG8=
+List-Unsubscribe: <https://mailer.test/u/90551>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Issue 215 of the roundup.

@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+*.tsbuildinfo
+
+# Credentials — the mail credential belongs in the OS keychain (ADR-001).
+# Nothing resembling one should ever be committed.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+app-password*
+
+# Local databases (ADR-004). The real one lives in the user config directory,
+# but tests and manual runs can drop one here.
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Test scratch
+/tmp/
+.vitest/

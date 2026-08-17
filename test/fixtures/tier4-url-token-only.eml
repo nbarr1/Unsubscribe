@@ -1,0 +1,12 @@
+From: "Gadget Store" <mail@gadgets.example>
+To: you@example.com
+Subject: Your weekly gadget digest
+Date: Mon, 17 Aug 2026 10:00:00 +0000
+Message-ID: <gadgets-33@gadgets.example>
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+
+<html><body>
+<p>Gadgets this week.</p>
+<p><a href="https://gadgets.example/subscription/opt-out?u=41" title="Click here">Click here</a> if you no longer wish to hear from us.</p>
+</body></html>

@@ -1,0 +1,28 @@
+From: "Local Cafe" <hello@localcafe.test>
+To: you@example.com
+Subject: This week's roast
+Date: Thu, 13 Aug 2026 08:30:00 +0000
+Message-ID: <roast-week33@localcafe.test>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b0undary42"
+
+--b0undary42
+Content-Type: text/plain; charset=UTF-8
+
+This week we are pouring an Ethiopian natural.
+Unsubscribe: https://localcafe.test/lists/leave?c=77
+
+--b0undary42
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><body>
+<p>This week we are pouring an Ethiopian natural.</p>
+<p><a href=3D"https://localcafe.test/menu">See the menu</a></p>
+<hr>
+<p style=3D"font-size:11px">You are receiving this because you signed up in =
+store. <a href=3D"https://localcafe.test/lists/leave?c=3D77">Unsubscribe</a>=
+</p>
+</body></html>
+
+--b0undary42--

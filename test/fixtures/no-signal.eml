@@ -1,0 +1,22 @@
+From: "A Person" <friend@example.net>
+To: you@example.com
+Subject: lunch?
+Date: Mon, 17 Aug 2026 11:04:00 +0000
+Message-ID: <lunch-plans-1@example.net>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="xyz"
+
+--xyz
+Content-Type: text/plain; charset=UTF-8
+
+Are you free Thursday? I want to unsubscribe from my gym, it's a whole saga.
+
+--xyz
+Content-Type: text/html; charset=UTF-8
+
+<html><body><p>Are you free Thursday? I want to unsubscribe from my gym,
+it's a whole saga.</p>
+<p><a href="https://maps.example.net/place/12">Here is the place</a></p>
+</body></html>
+
+--xyz--
