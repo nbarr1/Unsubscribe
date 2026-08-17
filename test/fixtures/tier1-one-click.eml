@@ -1,0 +1,27 @@
+Return-Path: <bounce@mail.patagonia.example>
+Delivered-To: you@example.com
+Received: from mail.patagonia.example (mail.patagonia.example [203.0.113.10])
+	by mx.example.com with ESMTPS id abc123
+	for <you@example.com>; Mon, 10 Aug 2026 09:14:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=patagonia.example;
+	s=mail; t=1786724062; bh=abcdefghijklmnop=;
+	h=From:To:Subject:List-Unsubscribe;
+	b=Kx9dQ2mLp0oIuYtRe1wQ2zXcVbNmAsDfGhJkLpOiUyTrEwQaSdFgHjKlZxCvBnM=
+From: "Patagonia" <news@patagonia.example>
+To: you@example.com
+Subject: Worn Wear: repair, don't replace
+Date: Mon, 10 Aug 2026 09:14:20 -0700
+Message-ID: <20260810161420.7c1e@mail.patagonia.example>
+List-ID: "Patagonia Stories" <stories.patagonia.example>
+List-Unsubscribe: <https://patagonia.example/u/one-click?t=9f2c1a>, <mailto:unsub@patagonia.example?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><body>
+<h1>Worn Wear</h1>
+<p>Our repair team is on the road again.</p>
+<p><a href=3D"https://patagonia.example/prefs">Manage your email =
+preferences</a></p>
+</body></html>

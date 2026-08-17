@@ -1,0 +1,13 @@
+Return-Path: <blast@offers.deals-example.test>
+From: "Your Bank Rewards" <rewards@bigbank.example>
+To: you@example.com
+Subject: Confirm your rewards preferences
+Date: Sun, 16 Aug 2026 22:41:03 +0000
+Message-ID: <blast-99213@offers.deals-example.test>
+DKIM-Signature: v=1; a=rsa-sha256; d=deals-example.test; s=blast;
+	h=From:Subject; b=c3VzcGljaW91cw==
+List-Unsubscribe: <https://tracking.sketchy-optout.test/o?e=you%40example.com&c=99213>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Click to confirm your preferences.

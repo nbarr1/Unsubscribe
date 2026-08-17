@@ -1,0 +1,13 @@
+Return-Path: <bounce@mail.example-shop.test>
+From: Example Shop <newsletter@example-shop.test>
+To: you@example.com
+Subject: =?UTF-8?Q?Autumn_sale_=E2=80=94_30%25_off?=
+Date: Tue, 11 Aug 2026 06:02:11 +0000
+Message-ID: <a91f2@mail.example-shop.test>
+DKIM-Signature: v=1; a=rsa-sha256; d=example-shop.test; s=k1;
+	h=From:Subject; b=deadbeefcafe=
+List-Unsubscribe: <https://example-shop.test/unsubscribe?id=88213>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Autumn sale is live. 30% off everything.
