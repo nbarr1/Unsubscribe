@@ -39,17 +39,35 @@ CREATE INDEX idx_sender_last_seen ON sender (last_seen_at DESC);
 -- Resolution on ingest is a lookup here. A new normalisation rule ADDS rows to
 -- this table; it never invalidates a decision, because decisions do not point
 -- at identities.
+--
+-- Three of the four kinds RESOLVE: a (kind, value) pair for list_id,
+-- from_address or normalized_key belongs to exactly one sender, enforced by the
+-- partial unique index below.
+--
+-- `dkim_domain` is recorded but does NOT resolve, and is deliberately not
+-- unique. A DKIM d= domain is frequently the sending *platform* —
+-- sendgrid.net, mailchimpapp.net, amazonses.com — shared by thousands of
+-- unrelated senders. A unique constraint would make the second SendGrid
+-- customer fail to ingest, and resolving on it would fold every SendGrid
+-- customer into one sender, so a single Keep would silently hide hundreds of
+-- newsletters. It is kept because it is what the detection layer compares an
+-- unsubscribe target against for the `suspicious` flag. See ADR-005.
 -- ---------------------------------------------------------------------------
 CREATE TABLE sender_identity (
-  sender_id    TEXT NOT NULL REFERENCES sender (id) ON DELETE CASCADE,
-  kind         TEXT NOT NULL CHECK (
-                 kind IN ('list_id', 'from_address', 'normalized_key', 'dkim_domain')
-               ),
-  value        TEXT NOT NULL,
+  sender_id     TEXT NOT NULL REFERENCES sender (id) ON DELETE CASCADE,
+  kind          TEXT NOT NULL CHECK (
+                  kind IN ('list_id', 'from_address', 'normalized_key', 'dkim_domain')
+                ),
+  value         TEXT NOT NULL,
   first_seen_at TEXT NOT NULL,
-  PRIMARY KEY (kind, value)
+  PRIMARY KEY (sender_id, kind, value)
 ) STRICT;
 
+CREATE UNIQUE INDEX idx_sender_identity_resolving
+  ON sender_identity (kind, value)
+  WHERE kind IN ('list_id', 'from_address', 'normalized_key');
+
+CREATE INDEX idx_sender_identity_lookup ON sender_identity (kind, value);
 CREATE INDEX idx_sender_identity_sender ON sender_identity (sender_id);
 
 -- ---------------------------------------------------------------------------

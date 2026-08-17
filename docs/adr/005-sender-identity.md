@@ -50,6 +50,24 @@ of a rule change.
    identities; it never invalidates a decision**, because decisions do not point
    at identities.
 
+   **Only three of the four kinds resolve.** `list_id`, `from_address` and
+   `normalized_key` each belong to exactly one sender and are what ingest
+   matches on. `dkim_domain` is recorded as an observation but is **not** used
+   to pick a sender, and is not unique.
+
+   The reason is that a DKIM `d=` domain is very often the sending _platform_ —
+   `sendgrid.net`, `mailchimpapp.net`, `amazonses.com` — shared by thousands of
+   unrelated senders. Resolving on it would fold every customer of a platform
+   into one sender, so a single Keep would silently hide hundreds of unrelated
+   newsletters. This ADR tolerates over-merging as "annoying, the user splits
+   it and moves on", but that is a different order of over-merge: it destroys
+   the per-sender decision the product exists to make, and the only repair is a
+   split — the operation this ADR says must never be needed to recover from
+   something the system did on its own.
+
+   The observation is still stored, because it is what the detection layer
+   compares an unsubscribe target against when setting the `suspicious` flag.
+
 3. **`sender_merge`** — explicit, user-authored merges, stored as their own
    rows and **replayed after every normalisation rule change**. A `merge`
    command whose result does not survive re-normalisation is a trap: the user

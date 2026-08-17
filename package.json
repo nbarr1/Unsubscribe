@@ -29,7 +29,8 @@
     "unsub": "tsx src/cli/index.ts"
   },
   "dependencies": {
-    "better-sqlite3": "^11.7.0"
+    "better-sqlite3": "^11.7.0",
+    "tldts": "^7.4.10"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
