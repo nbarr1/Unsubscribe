@@ -14,7 +14,10 @@ export default tseslint.config(
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
       '@typescript-eslint/consistent-type-imports': 'error',
-      eqeqeq: ['error', 'always'],
+      // `x == null` is the idiomatic "null or undefined" check, and SQLite
+      // hands back nulls where TypeScript expects `T | null`. Everything else
+      // must be strict.
+      eqeqeq: ['error', 'always', { null: 'ignore' }],
       'no-console': 'off',
     },
   },
